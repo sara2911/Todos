@@ -1,0 +1,13 @@
+
+label,input{
+    font-size:20px;
+}
+
+input,select{
+    border: 2px solid #ccc ;
+    border-radius: 10px;
+    height:30px;
+}
+._btn{
+border-radius: 15px;
+}

@@ -1,0 +1,86 @@
+.div1{
+    background-color: rgb(0, 0, 255,.5);
+    color: white;
+    width:100%;
+}
+.border{
+    border-radius:20px;
+    box-sizing: border-box;
+    overflow: hidden;;
+    
+}
+.btnAdd{
+    display: block;
+    margin-left: auto;
+     color:white;
+   
+     font-size: 45px;
+}
+.btnAdd i{
+     font-size:45px;
+     font-weight:bolder;
+border: 0;
+display: block;
+}
+th{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.btnEdite i{
+    color: rgb(0, 0, 255,.7);
+    font-size:25px;
+}
+.btnDelete i{
+    color: rgb(255, 0, 0,.7);
+    font-size: 25px;
+}
+td{
+    font-size: 18px;
+    padding:5px;
+}
+.spanbtn{
+display:flex;
+justify-content:space-around;
+
+}
+button{
+    padding: 0;
+}
+.status{
+   color: black;
+   background:rgb(144, 238, 144);
+    display: inline-block;
+    width: 100px;;
+    padding: 2px;
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .state span{
+      display: inline-block;
+  }
+ 
+
+  .circle{
+      display: inline-block;
+    width:14px;
+    height:14px;
+    border-radius: 50%;
+    border: 1px solid gray;
+
+  }
+  .done{
+      background-color:rgb(4, 165, 4);
+  } 
+  .inpro{
+    background-color:#71E0E8;
+}
+.todo{
+background-color: white;
+} 

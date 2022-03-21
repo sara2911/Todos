@@ -1,0 +1,77 @@
+
+<div class=" div1 row m-0  px-3">
+    <h2 class="col-9  p-3 m-0 "> Todos</h2>
+    <div class="col-3 p-0 m-0 ">
+        <button class=" btn   btnAdd  p-0 " (click)="addTask()">
+            <i class="bi bi-plus"></i>
+        </button>
+    </div>
+
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z6  " style="border: 10px;">
+    
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">
+
+               {{element.name}} </td>
+    </ng-container>
+
+    <!-- status Column -->
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef class="state">
+            <span class="me-2">Status</span>
+            <span>
+           
+            <!-- <mat-form-field >  -->
+                 <mat-select class="" name="state" #state  (selectionChange)="filter($event.value)" [(value)]="setected">
+                    <mat-option *ngFor=" let option of Options" class="my-1"  [value]="option">
+                         {{option}}
+                    </mat-option>
+                    <mat-option value="All" >All</mat-option> 
+
+                </mat-select>
+            </span>
+
+             <!-- </mat-form-field> -->
+        </th>
+        <td mat-cell *matCellDef="let element">
+         <span class="circle inpro me-2"
+         [ngClass]="{'done':element.status=='Done',
+        'todo':element.status=='ToDo',
+        'inpro':element.status=='InProgress'}"
+         
+         ></span>
+         {{element.status}}
+            </td>
+    </ng-container>
+
+    <!-- Edite Column -->
+    <ng-container matColumnDef="Edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+            
+            <span class="ps-3 spanbtn">
+                <button class="btnEdite btn" (click)="EditeTask(element.Id,element)">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="btn btnDelete" (click)="deleteTask(element.Id)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </span>
+            
+        </td>
+    </ng-container>
+
+   
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell text-danger" colspan="4">No data matching the filter "{{setected}}"
+          </td>
+    </tr>
+</table>
